@@ -3,9 +3,9 @@ class CreateRestaurants < ActiveRecord::Migration[6.0]
     create_table :restaurants do |t|
       t.string :name
       t.string :address
-      t.integer :price
+      t.string :price
       t.string :category
-      t.integer :phone_number
+      t.string :phone_number
       t.string :website_url
       t.string :hours_of_operation
 
