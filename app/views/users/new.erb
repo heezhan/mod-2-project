@@ -1,6 +1,6 @@
 <h1> Create a user account </h1>
 
-<%= render partial: '_user_form' %>
+<%= render partial: 'user_form' %>
 <% if @user.errors.any? %>
     <% @user.errors.full_messages.each do |msg| %>
         <%= msg %>
