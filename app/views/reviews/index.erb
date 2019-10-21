@@ -1,0 +1,8 @@
+<h1>All Reviews</h1>
+
+<h3>
+    <% @reviews.all |review| %>
+        <%= review.content %>
+        <%= review.stars %>
+    <% end %>
+</h3>
