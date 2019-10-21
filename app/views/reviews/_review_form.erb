@@ -1,0 +1,15 @@
+
+
+<%= form_for @review do |f| %>
+<%= f.label :content %>
+<%= f.text_area :content %>
+<%= f.label :stars %>
+<%= f.number_field :stars %>
+<%= f.label :user_id %>
+<%= f.text_field :user_id %>
+<%= f.label :restaurant_id %>
+<%= f.text_field :restaurant_id %>
+
+<%= f.submit "Create Review" %>
+
+<% end %>
