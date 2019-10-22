@@ -8,4 +8,8 @@ class User < ApplicationRecord
     validates :phone_number, presence: true #just numbers, no characters
     validates :email, presence: true #all lowercase, check for a @ symbol
 
+    def display_name
+        return self.username.capitalize
+    end 
+
 end
