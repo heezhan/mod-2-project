@@ -1,4 +1,5 @@
 class Restaurant < ApplicationRecord
+    belongs_to :location
     has_many :reviews
     has_many :users, through: :reviews
 
@@ -61,4 +62,5 @@ class Restaurant < ApplicationRecord
             if review.content.length
     end
 
+    has_many :users, through: :reservations
 end
