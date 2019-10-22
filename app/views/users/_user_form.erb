@@ -6,20 +6,20 @@
 
 <%= form_for @user do |f| %>
     <%= f.label :username %>
-    <%= f.text_field :username %>
+    <%= f.text_field :username %><br>
     <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password %><br>
     <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <%= f.password_field :password_confirmation %><br>
     <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name %><br>
     <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name %><br>
     <%= f.label :phone_number %>
-    <%= f.text_field :phone_number %>
+    <%= f.text_field :phone_number %><br>
     <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.text_field :email %><br>
     <%= f.label :birthdate %>
-    <%= f.date_field :birthdate %>
+    <%= f.date_field :birthdate %><br>
     <%= f.submit "Create User" %>
 <% end %>

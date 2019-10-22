@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_22_183923) do
+ActiveRecord::Schema.define(version: 2019_10_22_194427) do
 
   create_table "locations", force: :cascade do |t|
     t.string "region"
@@ -59,8 +59,6 @@ ActiveRecord::Schema.define(version: 2019_10_22_183923) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "username"
-    t.string "password"
-    t.string "password_confirmation"
     t.string "password_digest"
   end
 
