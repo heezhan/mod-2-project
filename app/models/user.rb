@@ -13,4 +13,16 @@ class User < ApplicationRecord
     def display_name
         return self.username.capitalize
     end 
+
+    def favorite_restaurants
+    end
+
+    def least_favorite_restaurants
+    end
+
+    def longest_review
+    end
+
+    def upcoming_reservations
+    end
 end
