@@ -1,5 +1,4 @@
 class ReviewsController < ApplicationController
-
     before_action :find_review, only: [:show, :edit, :update, :destroy]
 
     def index
