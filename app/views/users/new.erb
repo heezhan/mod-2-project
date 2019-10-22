@@ -1,9 +1,13 @@
 <h1> Create a user account </h1>
 
 <%= render partial: 'user_form' %>
-<% if @user.errors.any? %>
-    <% @user.errors.full_messages.each do |msg| %>
-        <%= msg %>
-    <% end %>
+
+<%= form_for @user do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.submit "Create User" %>
 <% end %>
+
 
