@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
         user = User.find_by(username: params[:username])
         if user
             session[:user_id] = user.id #does this alter the database or is it setting it temporarily?
-            redirect_to snacks_path
+            redirect_to user_path(user)
         else
             flash.now["notice"] = "No user found with that name"
             render :login 
