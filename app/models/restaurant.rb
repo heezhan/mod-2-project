@@ -7,7 +7,7 @@ class Restaurant < ApplicationRecord
         highest_rating = 0
         highest_rated_restaurant = nil
         Restaurant.all.each do |restaurant|
-            if restaurant.rating > highest_rating
+            if restaurant.average_rating > highest_rating
                 highest_rating = restaurant.rating
                 highest_rated_restaurant = restaurant.name
             end
@@ -19,7 +19,7 @@ class Restaurant < ApplicationRecord
         lowest_rating = 5
         lowest_rated_restaurant = nil
         Restaurant.all.each do |restaurant|
-            if restaurant.rating > lowest_rating
+            if restaurant.average_rating > lowest_rating
                 lowest_rating = restaurant.rating
                 lowest_rated_restaurant = restaurant.name
             end
@@ -49,7 +49,7 @@ class Restaurant < ApplicationRecord
     end
 
     def self.most_popular
-
+        
     end
 
     def restaurants_by_category(category)
