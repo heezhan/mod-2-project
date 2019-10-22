@@ -1,16 +1,19 @@
-
+<% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |message| %>
+        <%= message %><br>
+    <% end %>
+<% end %>
 
 <%= form_for @user do |f| %>
-<%= f.label :first_name %>
-<%= f.text_field :first_name %>
-<%= f.label :last_name %>
-<%= f.text_field :last_name %>
-<%= f.label :phone_number %>
-<%= f.text_field :phone_number %>
-<%= f.label :email %>
-<%= f.text_field :email %>
-<%= f.label :birthdate %>
-<%= f.text_field :birthdate %>
-<%= f.submit "Create User" %>
-
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <%= f.label :birthdate %>
+    <%= f.date_field :birthdate %>
+    <%= f.submit "Create User" %>
 <% end %>

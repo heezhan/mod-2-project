@@ -1,4 +1,11 @@
 class User < ApplicationRecord
     has_many :reviews
     has_many :restaurants, through: :reviews
+
+    validates :first_name, presence: true #capitalization
+    validates :last_name, presence: true #capitalization
+    validates :birthdate, presence: true #today's year is the limit
+    validates :phone_number, presence: true #just numbers, no characters
+    validates :email, presence: true #all lowercase, check for a @ symbol
+
 end
