@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     before_action :authorized
-    skip_before_action :authorized, only: [:new]
+    skip_before_action :authorized, only: [:new, :create]
     before_action :find_user, only: [:show, :edit, :update, :destroy]
 
     def index 
@@ -16,7 +16,6 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
-        byebug
         if @user.save
             session[:user_id] = @user.id
             redirect_to user_path(@user)
@@ -49,7 +48,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :birthdate, :phone_number, :email, :username, :password_digest)
+        params.require(:user).permit(:first_name, :last_name, :birthdate, :phone_number, :email, :username, :password)
     end
 
 end
