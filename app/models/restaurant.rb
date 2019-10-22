@@ -16,7 +16,7 @@ class Restaurant < ApplicationRecord
     end
 
     def self.lowest_rated
-        lowest_rating = 0
+        lowest_rating = 5
         lowest_rated_restaurant = nil
         Restaurant.all.each do |restaurant|
             if restaurant.rating > lowest_rating

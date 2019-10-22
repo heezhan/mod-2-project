@@ -1,0 +1,7 @@
+<h1> Your reservations: </h1>
+
+<% @reservations.each do |reservation| %>
+<%= reservation.restaurant.name %>
+<%= reservation.date %>
+<%= reservation.time %>
+<% end %>
