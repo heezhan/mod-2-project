@@ -1,4 +1,4 @@
-<h1> <%= @location.name %> Restaurants </h1>
+<h1> <%= @location.region %> Restaurants </h1>
 
 <% @location.restaurants.each do |restaurant| %>
 <%= link_to restaurant.name, restaurant_path(restaurant) %>

@@ -5,11 +5,8 @@
 <%= f.text_area :content %>
 <%= f.label :stars %>
 <%= f.number_field :stars %>
-<%= f.label :user_id %>
-<%= f.text_field :user_id %>
-<%= f.label :restaurant_id %>
-<%= f.text_field :restaurant_id %>
+<%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
 
-<%= f.submit "Create Review" %>
+<%= f.submit "Submit" %>
 
 <% end %>

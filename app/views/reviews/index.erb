@@ -2,6 +2,7 @@
 
 <h3>
     <% @reviews.each do |review|  %>
+    <h1> <%= review.restaurant.name %></h1>
         <%= review.content %>
         <%= review.stars %>
     <% end %>

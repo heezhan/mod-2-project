@@ -10,12 +10,13 @@ class ReviewsController < ApplicationController
     end
 
     def new
-        @restaurant = userinpu
         @review = Review.new
     end
 
     def create
+        
         @review = Review.new(review_params)
+        @review.user = current_user
         @review.save
         redirect_to review_path(@review)
     end
