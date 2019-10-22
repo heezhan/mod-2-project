@@ -1,7 +1,9 @@
 class Restaurant < ApplicationRecord
     belongs_to :location
     has_many :reviews
+    has_many :reservations 
     has_many :users, through: :reviews
+    has_many :users, through: :reservations
 
     def self.highest_rated
         highest_rating = 0
@@ -49,7 +51,7 @@ class Restaurant < ApplicationRecord
     end
 
     def self.most_popular
-        
+
     end
 
     def restaurants_by_category(category)
@@ -60,7 +62,8 @@ class Restaurant < ApplicationRecord
         longest_review
         self.reviews.each do |review|
             if review.content.length
+            end
+        end
     end
 
-    has_many :users, through: :reservations
 end

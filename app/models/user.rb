@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-    has_secure_password
     has_many :reviews
+    has_many :reservations
     has_many :restaurants, through: :reviews
     has_many :restaurants, through: :reservations
 
@@ -9,6 +9,8 @@ class User < ApplicationRecord
     validates :birthdate, presence: true #today's year is the limit
     validates :phone_number, presence: true #just numbers, no characters
     validates :email, presence: true #all lowercase, check for a @ symbol
+
+    has_secure_password
 
     def display_name
         return self.username.capitalize
