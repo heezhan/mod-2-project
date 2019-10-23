@@ -24,7 +24,8 @@ class ReviewsController < ApplicationController
     end
 
     def update
-
+        @review.update(review_params)
+        redirect_to review_path(@review)
     end
 
     def delete
