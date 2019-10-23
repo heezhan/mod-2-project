@@ -24,7 +24,8 @@ class ReviewsController < ApplicationController
     end
 
     def update
-
+        @review.update(review_params)
+        redirect_to review_path(@review)
     end
 
     def delete
@@ -33,7 +34,7 @@ class ReviewsController < ApplicationController
     private
 
     def find_review
-        @review = Review.find(session[:user_id])
+        @review = Review.find(params[:id])
     end
 
     def review_params
