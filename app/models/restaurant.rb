@@ -5,6 +5,19 @@ class Restaurant < ApplicationRecord
     has_many :users, through: :reviews
     has_many :users, through: :reservations
 
+    def self.search(search)
+        if search
+            restaurant = self.find_by(category: search)
+            if restaurant 
+                self.where(category: restaurant.category)
+            else 
+                self.all 
+            end 
+        else 
+            self.all 
+        end 
+    end 
+
     def self.highest_rated
         highest_rating = 0
         highest_rated_restaurant = nil
