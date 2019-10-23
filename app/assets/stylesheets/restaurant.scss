@@ -1,3 +1,35 @@
 // Place all the styles related to the restaurant controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header {
+    text-align: center;
+    height: 200px;
+    border: solid;
+    // background-position: center;
+    // background-image: url("");
+    // background-size: cover;
+}
+
+.btn a {
+    text-decoration: none;
+}
+
+.intro {
+    border: 2px solid black;
+    padding: 30px;
+    margin: 50px;
+}
+
+.gallery-img {
+    width: 200px;
+    margin: 50px;
+}
+
+// #home-page-title {
+    
+// }
+
+// h1 {
+//     color: rgb(147, 27, 47)
+// }
