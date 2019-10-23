@@ -33,7 +33,7 @@ class ReviewsController < ApplicationController
     private
 
     def find_review
-        @review = Review.find(session[:user_id])
+        @review = Review.find(params[:id])
     end
 
     def review_params
