@@ -1,10 +1,17 @@
 class UsersController < ApplicationController
     before_action :authorized
-    skip_before_action :authorized, only: [:new, :create]
+    skip_before_action :authorized, only: [:home, :new, :create]
     before_action :find_user, only: [:show, :edit, :update, :destroy]
 
+    def home
+        if logged_in?
+            redirect_to users_path
+        else
+            render :home
+        end
+    end 
+
     def index 
-        @users = User.all
     end
 
     def show

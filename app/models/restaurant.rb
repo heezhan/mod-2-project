@@ -18,8 +18,6 @@ class Restaurant < ApplicationRecord
         end 
     end 
 
-
-
     def self.most_stars
         most_stars = 0
         most_stars_restaurant = nil

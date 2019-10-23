@@ -2,3 +2,24 @@
     <h1>Welcome <%= current_user.display_name %></h1>
 <% end %>
 
+<h1> Welcome back to Welp D.C.! </h1></br>
+
+ <div>
+      <p> Most popular restaurant: </p>
+      <p> <%= link_to Restaurant.most_stars.name, restaurant_path(Restaurant.most_stars) %> </p>
+
+    </div>
+
+
+<div>
+    <p> Most recent post:</p>
+    <p> <%= link_to Review.most_recent_review.content, review_path(Review.most_recent_review) %></p>
+
+</div>
+
+<div>
+    <p> Star Welper: </p>
+    <p> <%= User.most_reviews.full_name %></p>
+
+
+</div>
