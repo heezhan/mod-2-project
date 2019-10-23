@@ -52,7 +52,11 @@ class Restaurant < ApplicationRecord
 
     def average_stars
         stars = self.reviews.map {|review| review.stars}
-        stars.sum / stars.length
+        if stars.length == 0
+            0
+        else 
+            stars.sum / stars.length
+        end 
     end
 
     def highest_rating_by_category(category)
