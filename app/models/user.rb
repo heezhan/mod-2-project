@@ -18,6 +18,10 @@ class User < ApplicationRecord
         return self.username.capitalize
     end 
 
+    def full_name
+        "#{self.first_name} #{self.last_name}"
+    end
+
     def favorite_restaurants #the restaurant the user has rated highest
         highest_rated = 0
         favorite_restaurant = nil
@@ -52,6 +56,18 @@ class User < ApplicationRecord
             end 
         return "#{longest_review.restaurant.name}, #{longest_review.content}"
         end 
+    end
+
+    def self.most_reviews
+        most_reviews = 0
+        prolific_user = nil
+        self.all.each do |user|
+            if user.reviews.length > most_reviews
+                most_reviews = user.reviews.length
+                prolific_user = user
+            end
+        end
+        prolific_user
     end
     
     # def upcoming_reservations

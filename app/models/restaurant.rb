@@ -5,16 +5,16 @@ class Restaurant < ApplicationRecord
     has_many :users, through: :reviews
     has_many :users, through: :reservations
 
-    def self.highest_rated
-        highest_rating = 0
-        highest_rated_restaurant = nil
+    def self.most_stars
+        most_stars = 0
+        most_stars_restaurant = nil
         Restaurant.all.each do |restaurant|
-            if restaurant.average_rating > highest_rating
-                highest_rating = restaurant.rating
-                highest_rated_restaurant = restaurant.name
+            if restaurant.average_stars > most_stars
+                most_stars = restaurant.average_stars
+                most_stars_restaurant = restaurant
             end
         end
-        highest_rated_restaurant
+        most_stars_restaurant
     end
 
     def self.lowest_rated
@@ -37,9 +37,9 @@ class Restaurant < ApplicationRecord
         Restaurant.all.select {|restaurant| restaurant.price == 1}
     end
 
-    def average_rating
-        ratings = self.reviews.map {|review| review.rating}
-        ratings.sum / ratings.length
+    def average_stars
+        stars = self.reviews.map {|review| review.stars}
+        stars.sum / stars.length
     end
 
     def highest_rating_by_category(category)
