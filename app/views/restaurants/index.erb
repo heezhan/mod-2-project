@@ -9,10 +9,13 @@
         <%= submit_tag ("Search") %>
 <% end %>
 
+
+<div class= "gallery">
     <% @restaurants.each do |restaurant| %>
-        <%= link_to restaurant.name, restaurant_path(restaurant) %><br>
-        <img src="" alt="">
-
+        <div class="imgContainer">
+        <img src= <%= restaurant.img_url %>>
+        <h4><center><%= link_to restaurant.name, restaurant_path(restaurant) %></center></h4>
+        </div>
     <% end %>
+</div>
 
-    <%= image_tag "roti.png", class: "gallery-img" %>

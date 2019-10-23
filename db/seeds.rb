@@ -12,14 +12,15 @@ Review.destroy_all
 Reservation.destroy_all
 Location.destroy_all
 
-dupontcircle = Location.create(region: "Dupont Circle")
+wh = Location.create(region: "White House")
 
-david = User.create({first_name: "David", last_name: "Fellows", phone_number: "3016462430", birthdate: "8/21/89", email: "dfellows11@gmail.com", username: "davidfellows", password: "2222", password_confirmation: "2222"})
-angela = User.create({first_name: "Angela", last_name: "Ryu", phone_number: "2012439921", birthdate: "12/11/92", email: "anguster91@gmail.com", username: "angelaryu", password: "3333", password_confirmation: "3333"})
-heejae = User.create({first_name: "Heejae", last_name: "Han", phone_number: "5715814282", birthdate: "11/18/94", email: "hhan1194@gmail.com", username: "hhan1194", password: "1111", password_confirmation: "1111"})
+david = User.create(first_name: "David", last_name: "Fellows", phone_number: "3016462430", birthdate: "8/21/89", email: "dfellows11@gmail.com", username: "davidfellows", password: "2222", password_confirmation: "2222")
+angela = User.create(first_name: "Angela", last_name: "Ryu", phone_number: "2012439921", birthdate: "12/11/92", email: "anguster91@gmail.com", username: "angelaryu", password: "3333", password_confirmation: "3333")
+heejae = User.create(first_name: "Heejae", last_name: "Han", phone_number: "5715814282", birthdate: "11/18/94", email: "hhan1194@gmail.com", username: "hhan1194", password: "1111", password_confirmation: "1111")
 
-roti = Restaurant.create({name: "Roti", address: "1311 F St NW, Washington, DC 20004", price: "$", category: "Mediterranean", phone_number: "2028717329", website_url: "roti.com", hours_of_operation: "9-5", location: dupontcircle})
-potbelly = Restaurant.create({name: "Potbellys", address: "709 H St NW, Washington, DC 20001", price: "$", category: "Fast Food", phone_number: "2023757893", website_url: "potbelly.com", hours_of_operation: "7-7:30", location: dupontcircle})
+roti = Restaurant.create(name: "Roti", address: "1311 F St NW, Washington, DC 20004", price: "$", category: "Mediterranean", phone_number: "2028717329", website_url: "roti.com", hours_of_operation: "10:30am - 9:00pm", location: wh, img_url: "https://images.unsplash.com/photo-1501112525013-8f623674ceef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1639&q=80")
+potbelly = Restaurant.create(name: "Potbelly", address: "718 14th St NW, Washington, DC 20005", price: "$", category: "Fast Food", phone_number: "2026289500", website_url: "potbelly.com", hours_of_operation: "10:00am - 7:00pm", location: wh, img_url: "https://images.unsplash.com/photo-1550507992-eb63ffee0847?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80")
+mxdc = Restaurant.create(name: "MXDC", address: "600 14th St NW, Washington, DC 20005", price: "$$", category: "Mexican", phone_number: "2023931900", website_url: "mxdcrestaurant.com", hours_of_operation: "11:30am - 11:00pm", location: wh, img_url: "https://images.unsplash.com/photo-1566740932818-cacfb780ae18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
 
 review1 = Review.create(content: "A nice place to grab a quick lunch", stars: 4, user: david, restaurant: potbelly)
 review2 = Review.create(content: "Good food", stars: 3, user: angela, restaurant: roti)
