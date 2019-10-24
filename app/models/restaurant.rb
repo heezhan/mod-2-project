@@ -30,24 +30,24 @@ class Restaurant < ApplicationRecord
         most_stars_restaurant
     end
 
-    def self.lowest_rated
+    def self.lowest_stars
         lowest_rating = 5
         lowest_rated_restaurant = nil
         Restaurant.all.each do |restaurant|
-            if restaurant.average_rating > lowest_rating
-                lowest_rating = restaurant.rating
+            if restaurant.average_stars > lowest_rating
+                lowest_rating = restaurant.average_stars
                 lowest_rated_restaurant = restaurant.name
             end
         end
         lowest_rated_restaurant
     end
 
-    def most_expensive
-        Restaurant.all.select {|restaurant| restaurant.price == 3}
+    def self.most_expensive
+        Restaurant.all.select {|restaurant| restaurant.price == "$$$"}
     end
 
-    def cheapest_restaurants
-        Restaurant.all.select {|restaurant| restaurant.price == 1}
+    def self.cheapest_restaurants
+        Restaurant.all.select {|restaurant| restaurant.price == "$"}
     end
 
     def average_stars
@@ -59,28 +59,46 @@ class Restaurant < ApplicationRecord
         end
     end
 
-    def highest_rating_by_category(category)
-
+    def self.find_restaurant_by_category(category) 
+        Restaurant.select{|restaurant| restaurant.category = category}
     end
 
-    def lowest_rating_by_category(category)
-
+    def self.highest_rated_by_category(category) 
+        find_restaurant_by_category(category).select{|restaurant| restaurant.average_stars > 4}
     end
 
-    def self.most_popular
-
+    def self.lowest_rating_by_category(category) 
+        find_restaurant_by_category(category).select{|restaurant| restaurant.average_stars < 2}
     end
 
-    def restaurants_by_category(category)
-        Restaurant.find_all {|restaurant| restaurant.category == category}
-    end
-
-    def longest_review
-        longest_review
-        self.reviews.each do |review|
-            if review.content.length
+    def self.most_popular 
+        num_of_reviews = 0
+        most_popular_restaurant = nil
+        Restaurant.all.each do |restaurant|
+            if restaurant.reviews.length > num_of_reviews
+                num_of_reviews = restaurant.reviews.length
+                most_popular_restaurant = restaurant
             end
         end
+        most_popular_restaurant.name
+    end
+
+    def self.restaurants_by_category(category) 
+        Restaurant.select {|restaurant| restaurant.category == category}
+    end
+
+    def self.longest_review 
+        longest_review_count = 0
+        longest_review = nil
+        Restaurant.all.each do |restaurant|
+            restaurant.reviews.each do |review|
+                if review.content.length > longest_review_count
+                    longest_review_count = review.content.length
+                    longest_review = review
+                end
+            end
+        end
+        longest_review.content
     end
 
 end
