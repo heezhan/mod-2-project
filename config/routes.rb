@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :reservations
   resources :locations, only: [:index, :show]
   get '/', to: 'users#home', as: "home"
+  get '/contact', to: 'users#contact', as: "contact"
   get '/login', to: 'sessions#login'
   post '/login', to: 'sessions#process_login'
   get '/logout', to: 'sessions#logout'

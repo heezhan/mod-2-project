@@ -22,7 +22,7 @@ class User < ApplicationRecord
         "#{self.first_name} #{self.last_name}"
     end
 
-    def favorite_restaurants #the restaurant the user has rated highest
+    def favorite_restaurants
         highest_rated = 0
         favorite_restaurant = nil
         self.reviews.each do |review|
