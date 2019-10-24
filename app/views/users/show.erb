@@ -14,4 +14,7 @@
 <h2 id="user-profile-header"> Email address:</h2>
 <%= @user.email %>
 
+<%= button_to "Delete Account", {:controller => :users,
+    :action => 'destroy', :id => current_user.id }, :method => :delete %>
+
 </div>
