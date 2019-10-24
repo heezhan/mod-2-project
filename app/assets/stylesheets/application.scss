@@ -14,16 +14,21 @@
  *= require_self
  */
 
- .header {
-     background:  rgba(136, 149, 141, 1);
-
+ html {
+     height: 100%;
  }
+
+header {
+     background:  rgba(136, 149, 141, 1);
+ }
+
  .image-logo {
      width: 150px;
      height: 75px;
  }
 
  body {
-    background: url("formbackground.jpg") no-repeat center center;
-    background-size: cover;
+     background: url("formbackground.jpg") no-repeat center center;
+     background-size: cover;
  }
+
