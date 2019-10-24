@@ -3,19 +3,25 @@
     <h1>All Restaurants in DC</h1>
 </div>
 
+
+
+<div class="searchbar">
 <h3>Search by Cuisine:</h3>
     <%= form_tag(restaurants_path, method: :get) do %>
-        <%= text_field_tag(:search, params[:search]) %>
-        <%= submit_tag ("Search") %>
-<% end %>
-
-
-<div class= "gallery">
-    <% @restaurants.each do |restaurant| %>
-        <div class="imgContainer">
-        <img src= <%= restaurant.img_url %>>
-        <h4><center><%= link_to restaurant.name, restaurant_path(restaurant) %></center></h4>
-        </div>
+        <%= text_field_tag(:search, params[:search], class: "form-control mr-sm-2") %>
+        <%= submit_tag ("Search"), class: "btn btn-outline-success my-2 my-sm-0" %>
     <% end %>
+</div>
+
+
+
+<br>
+<div class= "gallery">
+        <% @restaurants.each do |restaurant| %>
+            <div class="imgContainer">
+            <div class="ui segment"><img src= <%= restaurant.img_url %></div>
+            <div class="ui segment"><%= link_to restaurant.name, restaurant_path(restaurant) %></div>
+            </div></div>
+        <% end %>
 </div>
 
