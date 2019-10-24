@@ -14,7 +14,19 @@
  *= require_self
  */
 
+ .header {
+     background:  rgba(136, 149, 141, 1);
+
+ }
  .image-logo {
-     width: 200px;
-     height: 100px;
+     width: 150px;
+     height: 75px;
+ }
+
+ body {
+     background: url("background.jpg") no-repeat center center;
+    //  -webkit-background-size: cover;
+    //  -moz-background-size: cover;
+    //  -o-background-size: cover;
+     background-size: cover;
  }

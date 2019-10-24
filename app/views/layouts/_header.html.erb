@@ -35,11 +35,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <%= link_to "Home", home_path, class:"nav-link" %>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
+                
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Action</a>
@@ -54,7 +54,8 @@
                         <% if current_user %>
                       <%= link_to "Log Out", logout_path, class: "item" %>
                       <% else %>
-                      <%= link_to "Create new user", new_user_path, class: "item" %>
+                      <%= link_to "Create New User", new_user_path, class: "item" %>
+                      <%= link_to "Login", login_path, class: "item" %>
                         <% end %>
                     </a>
             <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
