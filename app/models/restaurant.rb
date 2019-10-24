@@ -31,10 +31,10 @@ class Restaurant < ApplicationRecord
     end
 
     def self.lowest_rated
-        lowest_rating = 5
+        lowest_rating = 6
         lowest_rated_restaurant = nil
         Restaurant.all.each do |restaurant|
-            if restaurant.average_rating > lowest_rating
+            if restaurant.average_stars < lowest_rating
                 lowest_rating = restaurant.rating
                 lowest_rated_restaurant = restaurant.name
             end
@@ -42,12 +42,12 @@ class Restaurant < ApplicationRecord
         lowest_rated_restaurant
     end
 
-    def most_expensive
-        Restaurant.all.select {|restaurant| restaurant.price == 3}
+    def self.most_expensive
+        self.all.select {|restaurant| restaurant.price == "$$$"}
     end
 
-    def cheapest_restaurants
-        Restaurant.all.select {|restaurant| restaurant.price == 1}
+    def self.cheapest_restaurants
+        Restaurant.all.select {|restaurant| restaurant.price == "$"}
     end
 
     def average_stars

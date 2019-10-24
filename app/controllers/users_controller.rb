@@ -46,6 +46,9 @@ class UsersController < ApplicationController
         redirect_to home_path
     end
 
+    def stats
+    end 
+
     private
 
     def find_user

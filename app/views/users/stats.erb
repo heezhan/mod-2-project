@@ -1,0 +1,46 @@
+<div>
+<h1>Analytics</h1>
+
+<div class="container">
+    <div class="row">
+
+    <div class="col-sm">
+    <h2>User</h2>
+    Star Welper:
+    <p> <%= User.most_reviews.full_name %>
+    </p>
+
+    Most recent post:
+    <p> <%= link_to Review.most_recent_review.content, review_path(Review.most_recent_review) %>
+    </p>
+    </div> 
+
+    <div class="col-sm">
+    <h2>Review</h2>
+    
+    <p>
+
+    </p>
+    </div>  
+
+    <div class="col-sm">
+    <h2>Restaurant</h2>
+    Most Popular Restaurant:
+    <p> <%= link_to Restaurant.most_stars.name, restaurant_path(Restaurant.most_stars) %>
+    </p>
+
+    Most Expensive Restaurant:
+    <p> <% Restaurant.most_expensive.each do |restaurant| %>
+        <%= restaurant.name %>
+        <% end %>
+    </p>
+
+    Cheapest Restaurant:
+    <p> <% Restaurant.cheapest_restaurants.each do |restaurant| %>
+        <%= restaurant.name %><br>
+        <% end %>
+    </p>
+    </div>  
+    </div>
+</div>
+</div>
