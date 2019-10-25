@@ -1,9 +1,9 @@
 <h1>All Reviews</h1>
 
-<h3>
+<h2>
     <% @reviews.each do |review|  %>
-    <h1> <%= review.restaurant.name %></h1>
-        <%= review.content %>
-        <%= review.stars %>
+    <%= review.restaurant.name %><br>
+        Review: <%= review.content %><br>
+        Rating: <%= review.stars %><br>
     <% end %>
-</h3>
+</h2>
