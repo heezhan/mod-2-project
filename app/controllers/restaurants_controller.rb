@@ -1,5 +1,7 @@
 class RestaurantsController < ApplicationController
     before_action :authorized
+    skip_before_action :authorized, only: [:index]
+
     # def index
     #     if current_user
     #         @restaurants = Restaurant.all 

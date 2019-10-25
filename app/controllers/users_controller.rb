@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     before_action :authorized
-    skip_before_action :authorized, only: [:home, :new, :create]
+    skip_before_action :authorized, only: [:home, :new, :create, :contact]
     before_action :find_user, only: [:show, :edit, :update, :destroy]
 
     def home
