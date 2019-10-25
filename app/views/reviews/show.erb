@@ -1,8 +1,10 @@
-<h1> <%= @review.restaurant.name %></h1><br>
+<h1> <%= @review.restaurant.name %><br>
 <br>
-<h1><center>
-Rumour Has It:<br>
+<center>
+    User:<br>
+    <%= @review.user.first_name + " " + @review.user.last_name%><br>
+<br>Review:<br>
 <%= @review.content %><br>
-Stars:<br>
+<br>Stars:<br>
 <%= @review.stars %>
 </h1></center>

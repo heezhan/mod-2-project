@@ -46,17 +46,20 @@ class User < ApplicationRecord
         return least_favorite_restaurant
     end
 
-    def longest_review
+    def self.longest_review
         longest_length = 0
         longest_review = nil
-        self.reviews.each do |review|
-            if review.content.length > longest_length
+        self.all.each do |user|
+            user.reviews.each do |review|
+                if review.content.length > longest_length
                 longest_length = review.content.length
                 longest_review = review
+                end 
             end 
-        return "#{longest_review.restaurant.name}, #{longest_review.content}"
         end 
-    end
+    return "#{longest_review.restaurant.name}, #{longest_review.content}"
+  end 
+  
 
     def self.most_reviews
         most_reviews = 0
