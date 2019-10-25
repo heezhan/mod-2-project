@@ -1,20 +1,19 @@
 
-<div class="profilepage">
 
-<h1 id="user-profile-header"> Your Profile</h1>
+ 
+<h1> Your Profile</h1>
 
-<h2 id="user-profile-header"> First name:</h2>
-<%= @user.first_name %>
-<h2 id="user-profile-header"> Last name:</h2>
-<%= @user.last_name %>
-<h2 id="user-profile-header">Birthday:</h2>
-<%= @user.birthdate %>
-<h2 id="user-profile-header"> Phone number: </h2>
-<%= @user.phone_number %>
-<h2 id="user-profile-header"> Email address:</h2>
-<%= @user.email %>
+<h2> First name:
+<%= @user.first_name %><br>
+Last name:
+<%= @user.last_name %><br>
+Birthday:
+<%= @user.birthdate %><br>
+Phone number:
+<%= @user.phone_number %><br>
+Email address:
+<%= @user.email %><br>
 
 <%= button_to "Delete Account", {:controller => :users,
     :action => 'destroy', :id => current_user.id }, :method => :delete %>
-
-</div>
+</h2>

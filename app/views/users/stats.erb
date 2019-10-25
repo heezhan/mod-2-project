@@ -1,11 +1,11 @@
 <div class= stats>
-<h1 id="user-profile-header">Analytics</h1>
+<h1>Analytics</h1>
 <br>
 <div class="container">
     <div class="row">
 
     <div class="col-sm">
-    <h2 id="user-profile-header">User</h2>
+    <h2>User</h2>
     Star Welper:
     <p> <%= User.most_reviews.full_name %>
     </p>
@@ -16,7 +16,7 @@
     </div> 
 
     <div class="col-sm">
-    <h2 id="user-profile-header">Review</h2>
+    <h2>Review</h2>
     
     <p>
 
@@ -24,7 +24,7 @@
     </div>  
 
     <div class="col-sm">
-    <h2 id="user-profile-header">Restaurant</h2>
+    <h2>Restaurant</h2>
     Most Popular Restaurant:
     <p> <%= link_to Restaurant.most_stars.name, restaurant_path(Restaurant.most_stars) %>
     </p>
