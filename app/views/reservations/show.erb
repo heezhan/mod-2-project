@@ -1,5 +1,15 @@
 <h1> Your Reservation:</h1>
 
-<%= @reservation.restaurant.name %>
-<%= @reservation.date %>
-<%= @reservation.time %>
+
+
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+                <h1 class="card-title"> Your Reservation:</h1>
+            <p><%= @reservation.restaurant.name %></p>
+            <p><%= @reservation.date %></p>
+            <p><%= @reservation.time %></p>
+        </div>
+    </div>
+</div>
