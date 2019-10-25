@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
     before_action :authorized
-    skip_before_action :authorized, only: [:index]
+    skip_before_action :authorized, only: [:index, :show]
 
     # def index
     #     if current_user

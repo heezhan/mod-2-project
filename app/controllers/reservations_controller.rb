@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-
+    before_action :authorized
     before_action :find_reservation, only: [:show, :edit, :update, :destroy]
 
     def index
