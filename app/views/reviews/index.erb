@@ -3,7 +3,9 @@
 <h2>
     <% @reviews.each do |review|  %>
     <%= review.restaurant.name %><br>
+    <%= review.user.first_name + " " + review.user.last_name %><br>
         Review: <%= review.content %><br>
         Rating: <%= review.stars %><br>
+        <br>
     <% end %>
 </h2>

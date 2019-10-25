@@ -1,18 +1,20 @@
 <div class= stats>
 <h1>Analytics</h1>
-<br>
+
 <div class="container">
     <div class="row">
 
     <div class="col-sm">
-    <h2>User</h2>
+    <h2>User<br>
+        <br>
     Star Welper:
     <p> <%= User.most_reviews.full_name %>
-    </p>
+    </p></h2>
 
+    <h2>
     Most recent post:
     <p> <%= link_to Review.most_recent_review.content, review_path(Review.most_recent_review) %>
-    </p>
+    </p></h2>
     </div> 
 
     <div class="col-sm">
@@ -24,22 +26,24 @@
     </div>  
 
     <div class="col-sm">
-    <h2>Restaurant</h2>
+    <h2>Restaurant<br>
+        <br>
     Most Popular Restaurant:
     <p> <%= link_to Restaurant.most_stars.name, restaurant_path(Restaurant.most_stars) %>
-    </p>
-
-    Most Expensive Restaurant:
+    </p></h2>
+    <br>
+    <h2>Most Expensive Restaurant:<br>
     <p> <% Restaurant.most_expensive.each do |restaurant| %>
         <%= restaurant.name %>
-        <% end %>
+        <% end %></h2>
     </p>
-
-    Cheapest Restaurant:
+    <br>
+    <h2>
+    Cheapest Restaurant:<br>
     <p> <% Restaurant.cheapest_restaurants.each do |restaurant| %>
         <%= restaurant.name %><br>
         <% end %>
-    </p>
+    </p></h2>
     </div> 
 
     </div>
