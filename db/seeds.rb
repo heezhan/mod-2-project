@@ -29,6 +29,8 @@ Washington, DC 20005", price: "$", category: "Fast Food", phone_number: "2028095
 review1 = Review.create(content: "A nice place to grab a quick lunch", stars: 4, user: david, restaurant: potbelly)
 review2 = Review.create(content: "Good food", stars: 3, user: angela, restaurant: roti)
 review3 = Review.create(content: "Decent place", stars: 4, user: heejae, restaurant: roti)
+review3 = Review.create(content: "Can't remember what I didn't like", stars: 1, user: heejae, restaurant: mxdc)
+review3 = Review.create(content: "I think about it every day", stars: 5, user: david, restaurant: astro)
 
 reservation1 = Reservation.create(date: "10/25/19", time: "11:00am", guests: 3, restaurant: roti, user: david)
 reservation2 = Reservation.create(date: "11/18/19", time: "1:00pm", guests: 5, restaurant: potbelly, user: heejae)

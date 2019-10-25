@@ -9,19 +9,27 @@
         <br>
     Star Welper:
     <p> <%= User.most_reviews.full_name %>
+
     </p></h2>
 
-    <h2>
-    Most recent post:
-    <p> <%= link_to Review.most_recent_review.content, review_path(Review.most_recent_review) %>
-    </p></h2>
+
     </div> 
 
     <div class="col-sm">
-    <h2>Review</h2>
+    <h2>Review<br>
+        <br>
+    Most recent review:
     
+            <p> <%= link_to Review.most_recent_review.content, review_path(Review.most_recent_review) %>
+            </p>
     <p>
+Longest Review:
+  <%= User.longest_review %><br>
 
+   <br> Most Popular: <br>
+   Fast Food:
+  <%= Restaurant.highest_rated_by_category("Fast Food") %>
+   </h2>
     </p>
     </div>  
 
@@ -34,14 +42,15 @@
     <br>
     <h2>Most Expensive Restaurant:<br>
     <p> <% Restaurant.most_expensive.each do |restaurant| %>
-        <%= restaurant.name %>
+        <%= link_to restaurant.name, restaurant_path(restaurant) %>
         <% end %></h2>
+
     </p>
     <br>
     <h2>
     Cheapest Restaurant:<br>
     <p> <% Restaurant.cheapest_restaurants.each do |restaurant| %>
-        <%= restaurant.name %><br>
+        <%= link_to restaurant.name, restaurant_path(restaurant) %><br>
         <% end %>
     </p></h2>
     </div> 

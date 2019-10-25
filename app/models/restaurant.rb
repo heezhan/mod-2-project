@@ -43,7 +43,7 @@ class Restaurant < ApplicationRecord
     end
 
     def self.most_expensive
-        Restaurant.all.select {|restaurant| restaurant.price == "$$$"}
+        array = Restaurant.all.select {|restaurant| restaurant.price == "$$$"}
     end
 
     def self.cheapest_restaurants
@@ -64,12 +64,15 @@ class Restaurant < ApplicationRecord
     end
 
     def self.highest_rated_by_category(category) 
-        find_restaurant_by_category(category).select{|restaurant| restaurant.average_stars > 4}
+        array = find_restaurant_by_category(category).select{|restaurant| restaurant.average_stars > 4}
+        array.map do |restaurant|
+            return restaurant.name 
+        end
     end
 
     def self.lowest_rating_by_category(category) 
         find_restaurant_by_category(category).select{|restaurant| restaurant.average_stars < 2}
-    end
+    end 
 
     def self.most_popular 
         num_of_reviews = 0
