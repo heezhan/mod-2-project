@@ -5,9 +5,11 @@
 <div class="card">
         <div class="card-body">
                 <h1 class="card-title"> <%= reservation.restaurant.name %> </h1>
-                <p><%= reservation.guests %></p>
-               <p><%= reservation.date %></p>
-               <p><%= reservation.time %></p>
+                <h3>Number of guests: <%= reservation.guests %></h3>
+               <h3>Date: <%= reservation.date %></h3>
+               <h3>Time: <%= reservation.time %></h3>
+               <%= button_to "Delete Reservation", {:controller => :reservations,
+                :action => 'destroy', :id => reservation.id }, :method => :delete %>
         </div>
     </div>
 </div>
