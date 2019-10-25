@@ -1,7 +1,13 @@
 <h1> Your reservations: </h1>
 
 <% @reservations.each do |reservation| %>
-<%= reservation.restaurant.name %>
-<%= reservation.date %>
-<%= reservation.time %>
+<div class="container">
+<div class="card">
+        <div class="card-body">
+                <h1 class="card-title"> <%= reservation.restaurant.name %> </h1>
+               <p><%= reservation.date %></p>
+               <p><%= reservation.time %></p>
+        </div>
+    </div>
+</div>
 <% end %>
