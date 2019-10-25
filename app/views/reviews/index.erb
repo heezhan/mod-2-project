@@ -1,11 +1,24 @@
 <h1>All Reviews</h1>
 
-<h2>
-    <% @reviews.each do |review|  %>
+
+<% @reviews.each do |review|  %>
+
+
+<div class="container">
+<div class="card">
+    <div class="card-body">
+            <h4>
     <%= review.restaurant.name %><br>
+    <br>
     <%= review.user.first_name + " " + review.user.last_name %><br>
+    <br>
         Review: <%= review.content %><br>
-        Rating: <%= review.stars %><br>
         <br>
+        Rating: <%= review.stars %><br></h4>
+        <br>
+    </div>
+</div>
+</div>
     <% end %>
-</h2>
+
+
